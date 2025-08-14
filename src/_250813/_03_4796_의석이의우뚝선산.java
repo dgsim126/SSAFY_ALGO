@@ -5,67 +5,74 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
+/**
+ * k위치가 정상.
+ * k위치를 기준으로 왼쪽 오른쪽 몇 개까지 되는지 while문 두 개를 돌린다
+ * 왼쪽 2개, 오른쪽 2개라면 2*2
+ */
+
 public class _03_4796_의석이의우뚝선산 {
+	
+	static int N;
+	static int[] arr;
+	static int cnt;
+	
+	static void solution() {
+		
+		for(int k=1; k<N-1; k++) {
+			int current= k;
+			int left_cnt= 0;
+			int right_cnt= 0;
+			
+			// 왼쪽
+			while(0<=current-1 && arr[current-1]<arr[current]) {
+				left_cnt+=1;
+				current-=1;
+			}
+			if(left_cnt==0) {
+				continue;
+			}
+			
+			current= k;
+			
+			// 오른쪽
+			while(current+1<N && arr[current+1]<arr[current]) {
+				right_cnt+=1;
+				current+=1;
+			}
+			if(right_cnt==0) {
+				continue;
+			}
 
-    static int N;
-    static int[] arr;
-    static long cnt; // 구간 수는 long!
+			cnt+=(left_cnt*right_cnt);
+		}
+		
+	}
 
-    static void solution() {
-        for (int k = 1; k < N - 1; k++) {
-            int left_cnt = 0, right_cnt = 0;
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st;
+		
+		int T= Integer.parseInt(br.readLine());
+		for(int i=1; i<T+1; i++) {
+			N= Integer.parseInt(br.readLine());
+			arr= new int[N];
+			cnt= 0;
+			
+			st= new StringTokenizer(br.readLine());
+			for(int j=0; j<N; j++) {
+				arr[j]= Integer.parseInt(st.nextToken());
+			}
+			
 
-            // 왼쪽: ... < arr[k-1] < arr[k]
-            int current = k;
-            while (current - 1 >= 0 && arr[current - 1] < arr[current]) {
-                left_cnt++;
-                current--;
-            }
-            if (left_cnt == 0) continue;
+			solution();
+				
+			System.out.println("#" + i + " " + cnt);
+			
+			
+			
+		}
 
-            // 오른쪽: arr[k] > arr[k+1] > ...
-            current = k;
-            while (current + 1 < N && arr[current] > arr[current + 1]) {
-                right_cnt++;
-                current++;
-            }
-            if (right_cnt == 0) continue;
+	}
 
-            cnt += 1L * left_cnt * right_cnt;
-        }
-    }
-
-    public static void main(String[] args) throws NumberFormatException, IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-        int T = Integer.parseInt(br.readLine().trim());
-        StringBuilder sb = new StringBuilder();
-
-        for (int tc = 1; tc <= T; tc++) {
-            N = Integer.parseInt(br.readLine().trim());
-            arr = new int[N];
-            cnt = 0L;
-
-            // 숫자 N개를 모을 때까지 안전하게 파싱
-            int filled = 0;
-            while (filled < N) {
-                String line = br.readLine();
-                if (line == null) break; // 방어
-                StringTokenizer st = new StringTokenizer(line);
-                while (st.hasMoreTokens() && filled < N) {
-                    arr[filled++] = Integer.parseInt(st.nextToken());
-                }
-            }
-
-            if (N <= 2) {
-                sb.append('#').append(tc).append(' ').append(0).append('\n');
-                continue;
-            }
-
-            solution();
-            sb.append('#').append(tc).append(' ').append(cnt).append('\n');
-        }
-
-        System.out.print(sb.toString());
-    }
 }
