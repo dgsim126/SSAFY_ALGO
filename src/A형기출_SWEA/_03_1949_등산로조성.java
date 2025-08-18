@@ -77,11 +77,6 @@ public class _03_1949_등산로조성 {
 						dfs(n_y, n_x, len+1, current-1, 0);
 						
 						visited[n_y][n_x]= 0;
-//					}else { // 탈출
-//						if(len>max_length) {
-//							max_length= len;
-//							return;
-//						}
 					}
 				}
 			}
