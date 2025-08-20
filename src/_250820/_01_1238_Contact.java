@@ -13,7 +13,7 @@ import java.util.StringTokenizer;
 
 /**
  * Node 클래스를 하나 만들어야 할 거 같음
- * Node 클래스는 본인의 값을 하나 가질 것이고, Node들을 가진 ArrayList, 그리고 몇 번째 방문인지 확인할 day
+ * Node 클래스는 본인의 값을 하나 가질 것이고, Node들을 가진 SET, 그리고 몇 번째 방문인지 확인할 day
  * 
  * BFS 개념을 활용해야 할 것 같음
  * 첫 노드가 주어지면 그걸 노드에 넣고 해당 노드의 ArrayList에 속한 값들을 큐에 넣는다.
@@ -21,9 +21,7 @@ import java.util.StringTokenizer;
  */
 
 class Node{
-	// int myValue;
 	Set<Integer> connected= new HashSet<>();
-	// List<Integer> connected= new ArrayList<>();
 	int time;
 }
 
