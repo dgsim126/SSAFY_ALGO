@@ -9,11 +9,13 @@ import java.util.List;
 import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
-class Node{
-    List<int[]> connected= new ArrayList<>(); // {연결된 노드 번호, 거리}
-}
+
 
 public class _01_1753_최단경로_BOJ_ver2 {
+	
+	static class Node{
+	    List<int[]> connected= new ArrayList<>(); // {연결된 노드 번호, 거리}
+	}
     
     static int V; // 정점의 개수
     static int E; // 간선의 개수
