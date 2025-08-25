@@ -21,7 +21,7 @@ public class _07_3289_서로소집합_SWEA  {
 		return node;
 	}
 	
-	static void union(int node1, int node2) {
+	static void union(int node1, int node2) { // 두 개의 집합을 병합(가리키는 루트 노드를 같게 만든다.)
 		int node1_root= find(node1);
 		int node2_root= find(node2);
 		
