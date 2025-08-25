@@ -28,7 +28,6 @@ public class _03_1249_보급로_SWEA {
 	static int N;
 	static int[][] board;
 	static int[][] weight;
-	static int[][] visited;
 	
 	static int[] dy= {-1, 0, 1, 0}; // 북 동 남 서
 	static int[] dx= {0, 1, 0, -1};
@@ -36,7 +35,6 @@ public class _03_1249_보급로_SWEA {
 	static void solution() {
 		PriorityQueue<int[]> queue= new PriorityQueue<>((a, b) -> Integer.compare(a[0], b[0])); // 앞의 값을 기준으로 우선순위
 		queue.add(new int[] {0, 0, 0}); // 누적, y, x
-		visited[0][0]= 1;
 		weight[0][0]= 0;
 		
 		while(!queue.isEmpty()) {
@@ -72,7 +70,6 @@ public class _03_1249_보급로_SWEA {
 			N= Integer.parseInt(br.readLine());
 			board= new int[N][N];
 			weight= new int[N][N];
-			visited= new int[N][N];
 			
 			for(int y=0; y<N; y++) {
 				String temp= br.readLine();
