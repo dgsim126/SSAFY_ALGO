@@ -13,7 +13,7 @@ import java.util.StringTokenizer;
  * 
  */
 
-public class _04_11779_최소비용구하기2_BOJ {
+public class _00_11779_최소비용구하기2_BOJ {
 	
 	static int N; // 도시의 개수
 	static int M; // 버스의 개수
