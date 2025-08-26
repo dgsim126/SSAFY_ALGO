@@ -52,10 +52,6 @@ public class _02_1916_최소비용구하기_BOJ {
 			int to_node= temp[0]; // 출발 노드 번호
 			int to_node_weight= temp[1]; // 출발 노드의 현재까지의 가중치
 			
-			if(to_node_weight!=weight[to_node]) { // !!!!!!!!!!!!!!!!!! 해당 개념 중요(gpt가 알려줌) !!!!!!!!!!!!!!!!!! 
-				continue;
-			}
-			
 			if(visited[to_node]==0) {
 				for(int n[] : node[to_node].connected) {
 					int from_node= n[0]; // 도착 노드의 노드 번호
