@@ -7,8 +7,7 @@ import java.util.Arrays;
 import java.util.StringTokenizer;
 
 /**
- * 1. arr의 모든 가로 세로를 Queue에 저장한다.
- * queue에서 값을 하나씩 빼면서 가능한지 확인해야한다.
+ * 1. arr의 모든 가로 세로를 넘긴다
  * 
  * 2. 경사로 설치가 가능한지 어떻게 확인할 것인가?
  * 꺼내온 배열을 돌면서 값이 변하는 지점이 발생했다! 3 3 3 !4! 4 4 
