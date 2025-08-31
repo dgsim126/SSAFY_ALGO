@@ -1,4 +1,4 @@
-package _250930_시험대비;
+package _250830_시험대비_분할정복;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -20,7 +20,6 @@ public class _02_2630_색종이만들기_BOJ {
 	static int white_cnt; // 흰색==0
 	
 	/**
-	 * 
 	 * @return 값이 동일하지 않다면 -1, 전부 흰색이면 0, 전부 파란색이면 1
 	 */
 	static int checkColor(int start_y, int start_x, int end_y, int end_x) {
@@ -42,8 +41,7 @@ public class _02_2630_색종이만들기_BOJ {
 		int flag= checkColor(start_y, start_x, end_y, end_x);
 		
 		// 2. checkColor가 0혹은 1이면 전역 cnt를 증가시키고 return한다.
-		// 2. checkColor가 -1이면 새롭게 4개의 섹션으로 나눠서 dfs를 호출한다.
-		
+		// checkColor가 -1이면 새롭게 4개의 섹션으로 나눠서 dfs를 호출한다.
 		if(flag==-1) {
 			dfs(start_y, start_x, (start_y+end_y)/2, (start_x+end_x)/2); 
 			dfs(start_y, (start_x+end_x)/2+1, (start_y+end_y)/2, end_x);

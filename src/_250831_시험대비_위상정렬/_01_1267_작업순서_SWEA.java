@@ -1,6 +1,6 @@
-package _250930_시험대비;
+package _250831_시험대비_위상정렬;
 
-public class _03_1992_쿼드트리_BOJ {
+public class _01_1267_작업순서_SWEA {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
