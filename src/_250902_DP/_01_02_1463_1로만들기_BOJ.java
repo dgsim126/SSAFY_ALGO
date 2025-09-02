@@ -1,6 +1,6 @@
-package _250902;
+package _250902_DP;
 
-public class _02_1916_최소비용구하기 {
+public class _01_02_1463_1로만들기_BOJ {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
