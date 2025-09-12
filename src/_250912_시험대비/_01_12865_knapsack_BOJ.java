@@ -31,7 +31,7 @@ public class _01_12865_knapsack_BOJ {
 			}
 		}
 		
-		System.out.println(Arrays.toString(dp));
+		// System.out.println(Arrays.toString(dp));
 		
 		// 결과 도출
 		int max_= 0;
