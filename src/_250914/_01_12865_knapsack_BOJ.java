@@ -13,7 +13,7 @@ public class _01_12865_knapsack_BOJ {
 	static int N; // 물품의 수
 	static int K; // 최대 무게
 	static int product[][]; // [] {각 물건 무게, 각 물건 가치}
-	static int dp[][]; // {y: 물건, x: 물건 무게}
+	static int dp[][]; // {y: 물건, x: 물건 무게}.
 	
 	// 현재의 내가 선택되는 경우와 그렇지 않은 경우를 고려한다.
 	static void solution() {
