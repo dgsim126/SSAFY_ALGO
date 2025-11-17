@@ -65,7 +65,7 @@ public class _01_1697_숨바꼭질 {
 		
 		N= Integer.parseInt(st.nextToken());
 		K= Integer.parseInt(st.nextToken());
-		is_visited= new int[100000];
+		is_visited= new int[100001];
 		
 		solution();
 		
